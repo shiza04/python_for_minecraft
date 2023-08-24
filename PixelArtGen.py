@@ -95,6 +95,7 @@ def main():
                 prev_block = sim_block
                 image.putpixel((x,y), blocks[sim_block])
             disambiguation += "("+str(x+1-mult+1)+","+str(y+1)+")"+" "*(max_pos_len-len(str(x+1-mult+1)+str(y+1))+1)+str(mult)+"x"+" "*(max_mult_len-len(str(mult))+1)+prev_block+"\n\n"
+            image.save("pixel_art_"+sys.argv[1].split("\\")[-1])
         image.save("pixel_art_"+sys.argv[1].split("\\")[-1])
         open(".".join(sys.argv[1].split("\\")[-1].split(".")[0:-1])+"_pixel.txt","wt").write(disambiguation)
     else:
